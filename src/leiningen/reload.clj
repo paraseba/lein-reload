@@ -4,7 +4,7 @@
 (defn reload
   "Reload namespaces in modified files."
   [project & extra-dirs]
-  (let [dirs (map project (concat [:source-path :test-path] extra-dirs))]
+  (let [dirs (concat (map project [:source-path :test-path]) extra-dirs)]
     (eval-in-project project
       `(do
          (defonce
@@ -16,4 +16,5 @@
        nil false '(do
                     (require '[lein-reload.util.tracker :as tracker]
                              '[clojure.java.io :as io])))))
+
 
