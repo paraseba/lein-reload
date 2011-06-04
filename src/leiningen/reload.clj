@@ -1,13 +1,10 @@
 (ns leiningen.reload
- (:use [clojure.java.io :only (file)]
-       [leiningen.compile :only (eval-in-project)]
-       [lein-reload.util.tracker :only (tracker)]))
-
+ (:use [leiningen.compile :only (eval-in-project)]))
 
 (defn reload
   "Reload namespaces in modified files."
-  [project]
-  (let [dirs (map project [:source-path :test-path])]
+  [project & extra-dirs]
+  (let [dirs (map project (concat [:source-path :test-path] extra-dirs))]
     (eval-in-project project
       `(do
          (defonce
