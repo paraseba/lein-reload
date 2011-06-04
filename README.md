@@ -23,6 +23,17 @@ code to make it work, then reload and re-test
 reload will be fast, since it will only reload the files you modified
 since last time.
 
+If you want to automatically get a reload every time you test, you can add a hook
+in your `project.clj` file
+
+    :hooks [leiningen.hooks.reload-on-test]
+
+Then in the leiningen shell, modified files will be reloaded every time you
+call test, test! or retest, you don't need to call reload explicitly:
+
+    lein> test
+    lein> retest
+
 ## Disclaimer
 
 The code that detects changed files is a direct rip-off of
