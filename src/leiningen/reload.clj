@@ -2,7 +2,9 @@
  (:use [leiningen.compile :only (eval-in-project)]))
 
 (defn reload
-  "Reload namespaces in modified files."
+  "Reload namespaces in modified files.
+  It will watch :source-path and :test-path for changes.
+  You can pass extra directories as command line arguments."
   [project & extra-dirs]
   (let [dirs (concat (map project [:source-path :test-path]) extra-dirs)]
     (eval-in-project project
@@ -16,5 +18,4 @@
        nil false '(do
                     (require '[lein-reload.util.tracker :as tracker]
                              '[clojure.java.io :as io])))))
-
 
