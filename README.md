@@ -23,6 +23,11 @@ code to make it work, then reload and re-test
 reload will be fast, since it will only reload the files you modified
 since last time.
 
+## Disclaimer
+
+The code that detects changed files is a direct rip-off of
+https://github.com/weavejester/ring-reload-modified
+
 ## License
 
 Copyright (C) 2011 Sebastián B. Galkin
