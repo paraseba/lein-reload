@@ -4,7 +4,7 @@ Leininge plugin to reload namespaces in modified files
 
 ## Usage
 
-Add `[lein-reload "1.0.0-SNAPSHOT"]` to your `dev-dependencies` in
+Add `[lein-reload "1.0.0"]` to your `dev-dependencies` in
 `project.clj`.
 
 Start an interactive leiningen session
