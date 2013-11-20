@@ -1,6 +1,6 @@
 # lein-reload
 
-Leininge plugin to reload namespaces in modified files
+Leiningen plugin to reload namespaces in modified files
 
 ## Usage
 
